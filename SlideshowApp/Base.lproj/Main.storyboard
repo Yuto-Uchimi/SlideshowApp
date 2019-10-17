@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VgJ-aN-Qe5" userLabel="Slide">
+                                <rect key="frame" x="75" y="54" width="264" height="362"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="264" id="jtf-vc-Vhn"/>
+                                    <constraint firstAttribute="height" constant="362" id="quC-vK-Ies"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1e-vU-pEW">
+                                <rect key="frame" x="75" y="472" width="136" height="49"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="再生/停止"/>
+                                <connections>
+                                    <action selector="startstop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fAt-TF-eGp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHk-r3-PKR" userLabel="進む">
+                                <rect key="frame" x="146" y="527" width="63" height="62"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Ttj-Yo-GYy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="進む"/>
+                                <connections>
+                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q1d-sn-Omv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i0D-C0-U1q">
+                                <rect key="frame" x="75" y="527" width="63" height="62"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="mNd-yw-4yu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dj2-bQ-Qcu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VgJ-aN-Qe5" firstAttribute="leading" secondItem="i0D-C0-U1q" secondAttribute="leading" id="8zn-6H-0UH"/>
+                            <constraint firstItem="i0D-C0-U1q" firstAttribute="top" secondItem="K1e-vU-pEW" secondAttribute="bottom" constant="6" id="IBa-Hq-b2X"/>
+                            <constraint firstItem="qHk-r3-PKR" firstAttribute="baseline" secondItem="i0D-C0-U1q" secondAttribute="baseline" id="KFv-HV-8ta"/>
+                            <constraint firstItem="qHk-r3-PKR" firstAttribute="top" secondItem="i0D-C0-U1q" secondAttribute="top" id="LqX-EU-zvt"/>
+                            <constraint firstItem="VgJ-aN-Qe5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="OVS-me-qTW"/>
+                            <constraint firstItem="VgJ-aN-Qe5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pzt-Zc-8Nj"/>
+                            <constraint firstItem="VgJ-aN-Qe5" firstAttribute="leading" secondItem="K1e-vU-pEW" secondAttribute="leading" id="Zwc-g2-OgM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="K1e-vU-pEW" secondAttribute="trailing" symbolic="YES" id="fOs-mv-VJz"/>
+                            <constraint firstItem="qHk-r3-PKR" firstAttribute="leading" secondItem="i0D-C0-U1q" secondAttribute="trailing" constant="8" symbolic="YES" id="klq-Ff-WWW"/>
+                            <constraint firstItem="K1e-vU-pEW" firstAttribute="top" secondItem="VgJ-aN-Qe5" secondAttribute="bottom" constant="56" id="kzG-2E-52n"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qHk-r3-PKR" secondAttribute="trailing" symbolic="YES" id="umV-3r-MeV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="Back" destination="i0D-C0-U1q" id="vAR-QH-ooa"/>
+                        <outlet property="Next" destination="qHk-r3-PKR" id="A9E-kr-fev"/>
+                        <outlet property="back" destination="i0D-C0-U1q" id="ILN-if-oTr"/>
+                        <outlet property="next" destination="qHk-r3-PKR" id="xi0-j8-nLK"/>
+                        <outlet property="slideshow" destination="VgJ-aN-Qe5" id="IO6-1h-rxq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="132.58928571428572"/>
+        </scene>
+    </scenes>
+</document>
