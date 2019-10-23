@@ -9,11 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var slideshow: UIImageView!
     
     @IBOutlet weak var Back: UIButton!
     @IBOutlet weak var Next: UIButton!
+    @IBOutlet weak var Expantion: UIButton!
     
     /// 一定の間隔で処理を行うためのタイマー
     var timer: Timer?
@@ -32,8 +33,6 @@ class ViewController: UIViewController {
             "e",
             "o",
         ]
-        
-        // 画像の番号が正常な範囲を指しているかチェック
         
         // 範囲より下を指している場合、最後の画像を表示
         if dispImageNo < 0 {
@@ -60,23 +59,15 @@ class ViewController: UIViewController {
         
         let image = UIImage(named: "a")
         slideshow.image = image
-        
-        // タイマーを設定
-        timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(ViewController.onTimer(timer:)), userInfo: nil, repeats: true)
     }
     
     /// NSTimerによって、一定の間隔で呼び出される関数
     @objc func onTimer(timer: Timer)  {
-        
-        // 関数が呼ばれていることを確認
-        print("onTimer")
-        
         // 表示している画像の番号を1増やす
         dispImageNo += 1
         
         // 表示している画像の番号を元に画像を表示する
         displayImage()
-        
     }
     
     @IBAction func startstop(_ sender: Any) {
@@ -87,12 +78,14 @@ class ViewController: UIViewController {
             
             Back.isEnabled = true
             Next.isEnabled = true
+            Expantion.isEnabled = true
         } else {
             // タイマー始動
             timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(ViewController.onTimer(timer:)), userInfo: nil, repeats: true)
             
             Back.isEnabled = false
             Next.isEnabled = false
+            Expantion.isEnabled = false
         }
     }
     
@@ -100,4 +93,28 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         
     }
+    @IBAction func Back(_ sender: Any) {
+        dispImageNo -= 1
+        if dispImageNo < 0 {
+            dispImageNo = 4
+        }
+        displayImage()
+    }
+    @IBAction func Next(_ sender: Any) {
+        dispImageNo += 1
+        if dispImageNo > 5 {
+            dispImageNo = 0
+        }
+        displayImage()
+    }
+
+// segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+               let nextView = segue.destination as! ExViewController
+               nextView.Number = dispImageNo
+           }
+    
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+       }
 }
