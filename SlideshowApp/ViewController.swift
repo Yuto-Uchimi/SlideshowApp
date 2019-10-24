@@ -15,12 +15,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var Back: UIButton!
     @IBOutlet weak var Next: UIButton!
     @IBOutlet weak var Expantion: UIButton!
+    @IBOutlet weak var label: UILabel!
     
     /// 一定の間隔で処理を行うためのタイマー
     var timer: Timer?
     
     /// 表示している画像の番号
     var dispImageNo = 0
+    
     
     /// 表示している画像の番号を元に画像を表示する
     func displayImage() {
@@ -76,12 +78,16 @@ class ViewController: UIViewController {
             self.timer?.invalidate()
             self.timer = nil
             
+            label.text = "再生"
+            
             Back.isEnabled = true
             Next.isEnabled = true
             Expantion.isEnabled = true
         } else {
             // タイマー始動
             timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(ViewController.onTimer(timer:)), userInfo: nil, repeats: true)
+            
+            label.text = "停止"
             
             Back.isEnabled = false
             Next.isEnabled = false

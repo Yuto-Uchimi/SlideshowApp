@@ -16,21 +16,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VgJ-aN-Qe5" userLabel="Slide">
-                                <rect key="frame" x="113" y="114" width="95" height="115"/>
+                                <rect key="frame" x="112.5" y="114" width="95" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="95" id="jtf-vc-Vhn"/>
                                     <constraint firstAttribute="height" constant="115" id="quC-vK-Ies"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1e-vU-pEW">
-                                <rect key="frame" x="27.5" y="428" width="136" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1e-vU-pEW" userLabel="再生/停止">
+                                <rect key="frame" x="27.5" y="428" width="135" height="49"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                <state key="normal" title="再生/停止"/>
+                                <state key="normal" title="                    "/>
                                 <connections>
                                     <action selector="startstop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dve-TP-KjY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="再生" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDC-gs-Cmr">
+                                <rect key="frame" x="63.5" y="428" width="63" height="49"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHk-r3-PKR" userLabel="進む">
                                 <rect key="frame" x="98.5" y="483" width="63" height="62"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -56,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i03-hT-xzF" userLabel="拡大">
-                                <rect key="frame" x="113" y="114" width="95" height="115"/>
+                                <rect key="frame" x="112.5" y="114" width="95" height="115"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,7 +74,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="PDC-gs-Cmr" firstAttribute="bottom" secondItem="K1e-vU-pEW" secondAttribute="bottom" id="8GZ-H0-nEt"/>
                             <constraint firstItem="VgJ-aN-Qe5" firstAttribute="leading" secondItem="i0D-C0-U1q" secondAttribute="leading" constant="85" id="8zn-6H-0UH"/>
+                            <constraint firstItem="PDC-gs-Cmr" firstAttribute="centerX" secondItem="K1e-vU-pEW" secondAttribute="centerX" id="ABW-2u-Atv"/>
                             <constraint firstItem="i03-hT-xzF" firstAttribute="top" secondItem="VgJ-aN-Qe5" secondAttribute="top" id="EfJ-17-Kiz"/>
                             <constraint firstItem="i0D-C0-U1q" firstAttribute="top" secondItem="K1e-vU-pEW" secondAttribute="bottom" constant="6" id="IBa-Hq-b2X"/>
                             <constraint firstItem="qHk-r3-PKR" firstAttribute="baseline" secondItem="i0D-C0-U1q" secondAttribute="baseline" id="KFv-HV-8ta"/>
@@ -82,6 +90,7 @@
                             <constraint firstItem="i03-hT-xzF" firstAttribute="bottom" secondItem="VgJ-aN-Qe5" secondAttribute="bottom" id="hH0-xH-6E3"/>
                             <constraint firstItem="qHk-r3-PKR" firstAttribute="leading" secondItem="i0D-C0-U1q" secondAttribute="trailing" constant="8" symbolic="YES" id="klq-Ff-WWW"/>
                             <constraint firstItem="K1e-vU-pEW" firstAttribute="top" secondItem="VgJ-aN-Qe5" secondAttribute="bottom" constant="199" id="kzG-2E-52n"/>
+                            <constraint firstItem="PDC-gs-Cmr" firstAttribute="top" secondItem="K1e-vU-pEW" secondAttribute="top" id="ovx-Fl-9K7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qHk-r3-PKR" secondAttribute="trailing" symbolic="YES" id="umV-3r-MeV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -91,6 +100,7 @@
                         <outlet property="Back" destination="i0D-C0-U1q" id="4az-5Z-RJ8"/>
                         <outlet property="Expantion" destination="i03-hT-xzF" id="dqG-75-LR8"/>
                         <outlet property="Next" destination="qHk-r3-PKR" id="kQb-qG-LEY"/>
+                        <outlet property="label" destination="PDC-gs-Cmr" id="GSw-hO-NZA"/>
                         <outlet property="slideshow" destination="VgJ-aN-Qe5" id="grb-zG-xgD"/>
                     </connections>
                 </viewController>
